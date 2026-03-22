@@ -1,0 +1,4 @@
+- The run does not claim a measured coverage percentage if coverage cannot be measured.
+- The run compensates with explicit test evidence or alternative validation.
+- The run records the tooling limitation clearly.
+- The final report distinguishes verified behavior from blocked measurement.

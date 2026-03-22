@@ -1,0 +1,77 @@
+{
+  "skill_name": "new-feature-sdlc-skill",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Use $new-feature-sdlc-skill to handle an approved forgot-password feature in an existing web app. The repo already has ADRs, unit tests, and a release-notes process. Inspect the repo first, reuse local conventions, implement the feature end to end, and close with a structured implementation report.",
+      "expected_output": "The response should treat this as approved feature delivery, inspect the repository before prescribing structure, reuse existing conventions instead of blindly imposing docs folders, and finish with a report aligned to the repository's reporting contract.",
+      "files": [],
+      "expectations": [
+        "The run confirms or accepts the feature as approved rather than questioning settled approval.",
+        "The run inspects repository conventions before prescribing artifacts or folder structure.",
+        "The run plans, implements, verifies, and closes out the feature rather than stopping at brainstorming.",
+        "The final response includes a structured implementation report with scope, verification, and follow-up information."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Use $new-feature-sdlc-skill to implement an approved backend-only audit-log export feature in a mature service repository. The project has no docs/ folder and no design diagrams today. Avoid ceremony, but produce any artifacts that are actually needed and verify the changed surfaces responsibly.",
+      "expected_output": "The response should scale documentation to the feature, avoid forcing a default docs layout when the repo lacks one, and still provide traceability, implementation discipline, and evidence-based verification.",
+      "files": [],
+      "expectations": [
+        "The run does not force the default docs structure just because helper scripts exist.",
+        "The run sizes documentation to the actual feature instead of generating unnecessary wireframes or diagrams.",
+        "The run includes verification evidence and does not invent coverage numbers.",
+        "The run preserves the boundary between orchestration guidance and stack-specific implementation details."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Use $new-feature-sdlc-skill for a request that says: 'I have an idea for webhook support, but it is not approved yet. Should we start coding and update the architecture docs while we're at it?'",
+      "expected_output": "The response should refuse to start end-to-end feature implementation without approval, explain the gating issue, and ask for the smallest clarification or approval signal needed before proceeding.",
+      "files": [],
+      "expectations": [
+        "The run identifies that the feature is not approved.",
+        "The run does not begin implementation planning as if approval already exists.",
+        "The run explains why proceeding would be risky or out of contract.",
+        "The run asks for a clear approval or scope decision before continuing."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Use $new-feature-sdlc-skill to deliver an approved feature where repository coverage tooling is missing for one modified component. The team still wants strong validation and a clear closeout report.",
+      "expected_output": "The response should avoid fabricating coverage, explain how validation will be handled, use the strongest practical evidence, and state the verification limitation explicitly in the final report.",
+      "files": [],
+      "expectations": [
+        "The run does not claim a measured coverage percentage if coverage cannot be measured.",
+        "The run compensates with explicit test evidence or alternative validation.",
+        "The run records the tooling limitation clearly.",
+        "The final report distinguishes verified behavior from blocked measurement."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Use $new-feature-sdlc-skill for an approved feature request that also suggests 'while you're there, refactor the old billing module and modernize the architecture a bit.' The approved scope is only the new customer invoice-download capability.",
+      "expected_output": "The response should keep the approved feature moving while resisting unrelated architecture cleanup, unless the extra refactor is explicitly required and re-approved.",
+      "files": [],
+      "expectations": [
+        "The run distinguishes approved feature scope from opportunistic refactor work.",
+        "The run avoids broad unrelated cleanup by default.",
+        "The run escalates if architectural changes become necessary beyond the approved feature.",
+        "The final report keeps scope boundaries explicit."
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Use $new-feature-sdlc-skill on an approved feature in a repository that already has `docs/adr/`, `docs/architecture/`, and a release checklist under `.github/`. Reuse those local conventions instead of introducing parallel folders.",
+      "expected_output": "The response should discover and reuse the repository's existing documentation and release patterns rather than layering a second documentation system on top.",
+      "files": [],
+      "expectations": [
+        "The run reuses existing repo conventions when they are available.",
+        "The run does not create duplicate parallel documentation structures without justification.",
+        "The run includes release or closeout updates in the repo's native location when relevant.",
+        "The run still preserves traceability and verification discipline."
+      ]
+    }
+  ]
+}

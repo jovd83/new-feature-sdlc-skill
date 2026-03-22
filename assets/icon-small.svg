@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Feature Delivery Orchestrator">
+  <rect width="64" height="64" rx="14" fill="#0F4C5C"/>
+  <path d="M16 19h20l12 12v14H16z" fill="#E6F4F1"/>
+  <path d="M36 19v12h12" fill="none" stroke="#0F4C5C" stroke-width="4"/>
+  <path d="M22 36h20M22 44h14" fill="none" stroke="#0F4C5C" stroke-linecap="round" stroke-width="4"/>
+</svg>

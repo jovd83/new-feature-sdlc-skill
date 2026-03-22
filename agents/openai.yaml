@@ -1,0 +1,10 @@
+interface:
+  display_name: "Feature Delivery Orchestrator"
+  short_description: "Run approved feature work through planning, implementation, verification, and closeout"
+  icon_small: "./assets/icon-small.svg"
+  icon_large: "./assets/icon-large.svg"
+  brand_color: "#0F4C5C"
+  default_prompt: "Use $new-feature-sdlc-skill to inspect this repository, deliver the approved feature end to end, and close with a structured implementation report."
+
+policy:
+  allow_implicit_invocation: true

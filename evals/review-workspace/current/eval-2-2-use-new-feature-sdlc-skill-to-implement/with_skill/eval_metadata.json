@@ -1,0 +1,11 @@
+{
+  "eval_id": 2,
+  "eval_name": "2-use-new-feature-sdlc-skill-to-implement",
+  "prompt": "Use $new-feature-sdlc-skill to implement an approved backend-only audit-log export feature in a mature service repository. The project has no docs/ folder and no design diagrams today. Avoid ceremony, but produce any artifacts that are actually needed and verify the changed surfaces responsibly.",
+  "assertions": [
+    "The run does not force the default docs structure just because helper scripts exist.",
+    "The run sizes documentation to the actual feature instead of generating unnecessary wireframes or diagrams.",
+    "The run includes verification evidence and does not invent coverage numbers.",
+    "The run preserves the boundary between orchestration guidance and stack-specific implementation details."
+  ]
+}

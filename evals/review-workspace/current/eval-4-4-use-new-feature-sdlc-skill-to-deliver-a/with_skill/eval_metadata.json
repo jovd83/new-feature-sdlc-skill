@@ -1,0 +1,11 @@
+{
+  "eval_id": 4,
+  "eval_name": "4-use-new-feature-sdlc-skill-to-deliver-a",
+  "prompt": "Use $new-feature-sdlc-skill to deliver an approved feature where repository coverage tooling is missing for one modified component. The team still wants strong validation and a clear closeout report.",
+  "assertions": [
+    "The run does not claim a measured coverage percentage if coverage cannot be measured.",
+    "The run compensates with explicit test evidence or alternative validation.",
+    "The run records the tooling limitation clearly.",
+    "The final report distinguishes verified behavior from blocked measurement."
+  ]
+}

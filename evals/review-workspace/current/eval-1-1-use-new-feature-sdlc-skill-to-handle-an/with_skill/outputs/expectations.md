@@ -1,0 +1,4 @@
+- The run confirms or accepts the feature as approved rather than questioning settled approval.
+- The run inspects repository conventions before prescribing artifacts or folder structure.
+- The run plans, implements, verifies, and closes out the feature rather than stopping at brainstorming.
+- The final response includes a structured implementation report with scope, verification, and follow-up information.

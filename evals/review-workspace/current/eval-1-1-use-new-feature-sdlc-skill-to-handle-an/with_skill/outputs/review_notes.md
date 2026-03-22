@@ -1,0 +1,1 @@
+Use this viewer pass to judge whether the eval prompt is realistic, whether the expected output is discriminating, and whether the expectations would catch shallow or incorrect feature-delivery behavior.

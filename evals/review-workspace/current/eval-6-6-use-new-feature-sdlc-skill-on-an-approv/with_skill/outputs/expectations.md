@@ -1,0 +1,4 @@
+- The run reuses existing repo conventions when they are available.
+- The run does not create duplicate parallel documentation structures without justification.
+- The run includes release or closeout updates in the repo's native location when relevant.
+- The run still preserves traceability and verification discipline.

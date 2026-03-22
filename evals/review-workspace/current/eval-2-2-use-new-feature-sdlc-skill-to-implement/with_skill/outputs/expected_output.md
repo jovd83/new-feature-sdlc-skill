@@ -1,0 +1,1 @@
+The response should scale documentation to the feature, avoid forcing a default docs layout when the repo lacks one, and still provide traceability, implementation discipline, and evidence-based verification.

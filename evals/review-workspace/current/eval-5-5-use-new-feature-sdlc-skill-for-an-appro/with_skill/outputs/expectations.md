@@ -1,0 +1,4 @@
+- The run distinguishes approved feature scope from opportunistic refactor work.
+- The run avoids broad unrelated cleanup by default.
+- The run escalates if architectural changes become necessary beyond the approved feature.
+- The final report keeps scope boundaries explicit.

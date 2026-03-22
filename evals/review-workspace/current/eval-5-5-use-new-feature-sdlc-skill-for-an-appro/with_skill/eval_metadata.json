@@ -1,0 +1,11 @@
+{
+  "eval_id": 5,
+  "eval_name": "5-use-new-feature-sdlc-skill-for-an-appro",
+  "prompt": "Use $new-feature-sdlc-skill for an approved feature request that also suggests 'while you're there, refactor the old billing module and modernize the architecture a bit.' The approved scope is only the new customer invoice-download capability.",
+  "assertions": [
+    "The run distinguishes approved feature scope from opportunistic refactor work.",
+    "The run avoids broad unrelated cleanup by default.",
+    "The run escalates if architectural changes become necessary beyond the approved feature.",
+    "The final report keeps scope boundaries explicit."
+  ]
+}

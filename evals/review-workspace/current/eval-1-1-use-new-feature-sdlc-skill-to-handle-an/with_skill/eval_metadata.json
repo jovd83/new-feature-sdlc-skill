@@ -1,0 +1,11 @@
+{
+  "eval_id": 1,
+  "eval_name": "1-use-new-feature-sdlc-skill-to-handle-an",
+  "prompt": "Use $new-feature-sdlc-skill to handle an approved forgot-password feature in an existing web app. The repo already has ADRs, unit tests, and a release-notes process. Inspect the repo first, reuse local conventions, implement the feature end to end, and close with a structured implementation report.",
+  "assertions": [
+    "The run confirms or accepts the feature as approved rather than questioning settled approval.",
+    "The run inspects repository conventions before prescribing artifacts or folder structure.",
+    "The run plans, implements, verifies, and closes out the feature rather than stopping at brainstorming.",
+    "The final response includes a structured implementation report with scope, verification, and follow-up information."
+  ]
+}

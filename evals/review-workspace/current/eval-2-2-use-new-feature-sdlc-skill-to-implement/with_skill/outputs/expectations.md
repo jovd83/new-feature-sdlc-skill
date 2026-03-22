@@ -1,0 +1,4 @@
+- The run does not force the default docs structure just because helper scripts exist.
+- The run sizes documentation to the actual feature instead of generating unnecessary wireframes or diagrams.
+- The run includes verification evidence and does not invent coverage numbers.
+- The run preserves the boundary between orchestration guidance and stack-specific implementation details.

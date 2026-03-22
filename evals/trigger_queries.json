@@ -1,0 +1,62 @@
+[
+  {
+    "query": "Implement the approved export-to-PDF feature end to end. It touches the report API, the viewer UI, help docs, and release notes.",
+    "should_trigger": true,
+    "why": "Approved feature with explicit request for planning, implementation, docs, and closeout."
+  },
+  {
+    "query": "Product signed off on notification preferences. Please inspect the repo, update the planning artifacts, implement it, add tests, and return a structured delivery summary.",
+    "should_trigger": true,
+    "why": "Approved feature requiring full delivery orchestration."
+  },
+  {
+    "query": "Build the greenlit SSO feature and update the technical docs, diagrams, tests, and README.",
+    "should_trigger": true,
+    "why": "Approved end-to-end feature with multiple SDLC artifacts."
+  },
+  {
+    "query": "The dashboard redesign is approved. Handle the whole lifecycle from scope validation through implementation and verification.",
+    "should_trigger": true,
+    "why": "Explicit full-lifecycle feature request."
+  },
+  {
+    "query": "Take this approved bulk-import feature from planning through production-ready code and a release-ready implementation report.",
+    "should_trigger": true,
+    "why": "Substantive approved feature with end-to-end expectations."
+  },
+  {
+    "query": "Stakeholders approved the new invoice-download feature. Please inspect the repository, reuse its ADR and release-note conventions, implement the code, verify it, and hand me a closeout report.",
+    "should_trigger": true,
+    "why": "Approved feature request with explicit repository-aware SDLC expectations."
+  },
+  {
+    "query": "We have a bug in login where passwords containing # are rejected. Please fix it and add regression tests.",
+    "should_trigger": false,
+    "why": "Bug fix, not a new feature workflow."
+  },
+  {
+    "query": "Refactor the UserService into smaller classes and clean up the architecture.",
+    "should_trigger": false,
+    "why": "Refactor request without feature-delivery scope."
+  },
+  {
+    "query": "Write unit tests for PaymentProcessor until coverage reaches 80%.",
+    "should_trigger": false,
+    "why": "Test-only request."
+  },
+  {
+    "query": "I have an idea for webhook support but it is not approved yet. Should we start coding?",
+    "should_trigger": false,
+    "why": "Pre-approval ideation should not trigger delivery orchestration."
+  },
+  {
+    "query": "Our deploy job is timing out after the Helm upgrade step. Can you debug the pipeline?",
+    "should_trigger": false,
+    "why": "Ops incident, not feature delivery."
+  },
+  {
+    "query": "Add tests and a docs note for the existing password reset flow. Don't change product behavior.",
+    "should_trigger": false,
+    "why": "Maintenance request, not a new approved feature lifecycle."
+  }
+]

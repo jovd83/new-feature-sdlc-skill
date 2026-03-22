@@ -1,0 +1,1 @@
+The response should treat this as approved feature delivery, inspect the repository before prescribing structure, reuse existing conventions instead of blindly imposing docs folders, and finish with a report aligned to the repository's reporting contract.
