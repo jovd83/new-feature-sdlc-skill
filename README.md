@@ -1,5 +1,12 @@
 # New Feature SDLC Skill
 
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![GitHub stars](https://img.shields.io/github/stars/jovd83/new-feature-sdlc-skill?style=social)
+![GitHub forks](https://img.shields.io/github/forks/jovd83/new-feature-sdlc-skill?style=social)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/jovd83)
+
+
 An Agent Skill for orchestrating approved feature delivery in an existing codebase from discovery through implementation, verification, and closeout.
 
 This repository is designed for teams that want a strong "build the feature end to end" skill without hard-coding one stack, one test framework, or one documentation layout into every project.

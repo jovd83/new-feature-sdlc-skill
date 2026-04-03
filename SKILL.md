@@ -181,6 +181,14 @@ Pause and realign when any of these occur:
 
 When escalating, explain the blocker, the consequence of guessing, and the smallest decision needed from the user.
 
+## Gotchas
+
+- **Implicit Conventions**: Many repositories have naming or structural patterns that are not explicitly documented. Always look at adjacent files before creating net-new components.
+- **Dependency Chains**: A "simple" feature may trigger a cascade of changes in downstream consumers that aren't immediately obvious from local file inspection.
+- **Mock Over-Reliance**: When adding tests, it is easy to over-mock dependencies. This can result in passing tests that provide a false sense of security while ignoring integrated behavior.
+- **Documentation Lag**: Planning artifacts (Phase 1) can quickly become stale if implementation (Phase 3) requires a pivot. Ensure that any major technical deviations are reflected back in the "design intent" or "implementation report" to avoid misleading future maintainers.
+- **Context Limits**: Large features in complex codebases can hit token limits if discovery is too broad. Prefer targeted, iterative discovery over a single massive repository scan.
+
 ## Example Triggers
 
 - "Implement the approved notification preferences feature end to end, including docs and tests."
