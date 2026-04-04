@@ -1,6 +1,6 @@
 # New Feature SDLC Skill
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![Version](https://img.shields.io/badge/version-1.0.1-blue)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![GitHub stars](https://img.shields.io/github/stars/jovd83/new-feature-sdlc-skill?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/jovd83/new-feature-sdlc-skill?style=social)
@@ -14,7 +14,7 @@ This repository is designed for teams that want a strong "build the feature end 
 ## Metadata
 
 - Author: `jovd83`
-- Version: `1.0.0`
+- Version: `1.0.1`
 
 ## What This Skill Does
 

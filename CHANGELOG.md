@@ -1,6 +1,13 @@
 # Changelog
-
-## 1.0.0 - 2026-03-21
+2: 
+3: ## 1.0.1 - 2026-04-03
+4: 
+5: ### Added
+6: 
+7: - GitHub repository badges (version, license, stats, support)
+8: - Gotchas section to `SKILL.md` for better process guidance
+9: 
+10: ## 1.0.0 - 2026-03-21
 
 Initial enterprise-grade upgrade release for `new-feature-sdlc-skill`.
 
