@@ -210,6 +210,8 @@ def validate_scripts(root: Path, reporter: Reporter) -> None:
         "scripts/scaffold-feature.ps1",
         "scripts/validate-project-structure.ps1",
         "scripts/quick_validate.py",
+        "scripts/validate_skill.py",
+        "scripts/validate-skill.ps1",
     ]:
         if (root / relative_path).exists():
             reporter.ok(f"Script present: {relative_path}")

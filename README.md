@@ -136,7 +136,15 @@ For human review of the current eval inventory, this repository can build a view
 
 ## Validation
 
-Run the repository validator after substantive edits:
+Run the consolidated repository validator after substantive edits:
+
+```powershell
+python .\scripts\validate_skill.py .
+# or
+powershell -File .\scripts\validate-skill.ps1
+```
+
+Or run individual steps manually:
 
 ```powershell
 python .\scripts\quick_validate.py .

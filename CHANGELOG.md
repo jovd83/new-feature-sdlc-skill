@@ -5,7 +5,8 @@
 5: ### Added
 6: 
 7: - GitHub repository badges (version, license, stats, validate, support)
-8: - Gotchas section to `SKILL.md` for better process guidance
+- Consolidated validation scripts: `scripts/validate_skill.py` and `scripts/validate-skill.ps1`
+- Gotchas section to `SKILL.md` for better process guidance
 9: 
 10: ## 1.0.0 - 2026-03-21
 
