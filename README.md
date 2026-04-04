@@ -2,8 +2,7 @@
 
 ![Version](https://img.shields.io/badge/version-1.0.1-blue)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![GitHub stars](https://img.shields.io/github/stars/jovd83/new-feature-sdlc-skill?style=social)
-![GitHub forks](https://img.shields.io/github/forks/jovd83/new-feature-sdlc-skill?style=social)
+![Validate Skills](https://img.shields.io/badge/Validate-Skills-success)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/jovd83)
 
 

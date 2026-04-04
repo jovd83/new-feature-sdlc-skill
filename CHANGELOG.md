@@ -4,7 +4,7 @@
 4: 
 5: ### Added
 6: 
-7: - GitHub repository badges (version, license, stats, support)
+7: - GitHub repository badges (version, license, stats, validate, support)
 8: - Gotchas section to `SKILL.md` for better process guidance
 9: 
 10: ## 1.0.0 - 2026-03-21
