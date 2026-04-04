@@ -1,5 +1,7 @@
 # New Feature SDLC Skill
 
+[![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
 ![Version](https://img.shields.io/badge/version-1.0.1-blue)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Validate Skills](https://img.shields.io/badge/Validate-Skills-success)
