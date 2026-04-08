@@ -1,6 +1,17 @@
 ---
 name: new-feature-sdlc-skill
 description: Orchestrate approved new-feature delivery in an existing codebase from discovery through implementation, testing, and closeout. Use when Codex is asked to build a net-new or materially expanded feature end to end, especially when the request expects planning artifacts, architecture updates, production code, tests, documentation, or release-ready reporting. Do not use for isolated bug fixes, narrow refactors, test-only work, ops incidents, or unapproved feature ideas.
+metadata:
+  author: jovd83
+  version: "1.0.0"
+  dispatcher-category: engineering
+  dispatcher-capabilities: feature-orchestration, feature-delivery, implementation-planning, release-reporting
+  dispatcher-accepted-intents: orchestrate_feature_delivery, plan_feature_work, coordinate_feature_verification
+  dispatcher-input-artifacts: approved_feature_request, repo_context, requirements, architecture_constraints, delivery_constraints
+  dispatcher-output-artifacts: implementation_plan, feature_artifacts, verification_summary, delivery_report, routing_request
+  dispatcher-stack-tags: orchestration, sdlc, feature-delivery
+  dispatcher-risk: high
+  dispatcher-writes-files: true
 ---
 
 # New Feature SDLC Skill
@@ -29,6 +40,15 @@ If the request is mixed, apply this skill only to the feature-delivery portion.
 ## Operating Model
 
 Work in phases. Do not skip forward blindly, but do scale the depth to the repository and the request.
+
+## Dispatcher Integration
+
+Use `skill-dispatcher` as the primary integration layer whenever this skill needs specialized help for planning, implementation, testing, documentation, or reporting.
+
+- Prefer dispatching by intent instead of naming sibling skills directly.
+- Use repository evidence first, then let the dispatcher pick the best specialized skill for the current stack or artifact.
+- Keep direct skill names as examples or compatibility fallbacks, not as the primary routing contract.
+- Keep shared memory limited to stable cross-project policy supplied externally, never task-local delivery state.
 
 ### Phase 0: Entry Gate
 
@@ -134,7 +154,7 @@ Promotion rules:
 
 - Use `scripts/validate-project-structure.ps1` to inspect or optionally provision default SDLC directories in repositories that want this layout.
 - Use `scripts/scaffold-feature.ps1` to scaffold planning, technical, or report starter documents when lightweight templates help.
-- Use stack-specific skills for implementation and test frameworks when the repository needs deeper guidance.
+- Use `skill-dispatcher` to reach stack-specific implementation and test skills when the repository needs deeper guidance.
 
 ## Recommended Execution Pattern
 

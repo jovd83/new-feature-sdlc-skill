@@ -31,7 +31,7 @@ def read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
 
-def parse_frontmatter(path: Path, reporter: Reporter) -> tuple[dict[str, str], str] | None:
+def parse_frontmatter(path: Path, reporter: Reporter) -> tuple[dict[str, object], str] | None:
     text = read_text(path)
     match = re.match(r"^---\r?\n(.*?)\r?\n---\r?\n?(.*)$", text, re.DOTALL)
     if not match:
@@ -39,8 +39,24 @@ def parse_frontmatter(path: Path, reporter: Reporter) -> tuple[dict[str, str], s
         return None
 
     raw_frontmatter, body = match.groups()
-    data: dict[str, str] = {}
+    data: dict[str, object] = {}
+    current_block: str | None = None
     for line in raw_frontmatter.splitlines():
+        if line.startswith("  "):
+            if current_block is None:
+                reporter.fail(f"{path.name} has an invalid nested frontmatter line: {line}")
+                return None
+            stripped = line.strip()
+            if ":" not in stripped:
+                reporter.fail(f"{path.name} has an invalid nested frontmatter line: {line}")
+                return None
+            key, value = stripped.split(":", 1)
+            nested = data.setdefault(current_block, {})
+            if not isinstance(nested, dict):
+                reporter.fail(f"{path.name} frontmatter block {current_block} must be a mapping")
+                return None
+            nested[key.strip()] = value.strip().strip('"').strip("'")
+            continue
         stripped = line.strip()
         if not stripped:
             continue
@@ -48,7 +64,14 @@ def parse_frontmatter(path: Path, reporter: Reporter) -> tuple[dict[str, str], s
             reporter.fail(f"{path.name} has an invalid frontmatter line: {line}")
             return None
         key, value = stripped.split(":", 1)
-        data[key.strip()] = value.strip().strip('"').strip("'")
+        normalized_key = key.strip()
+        normalized_value = value.strip().strip('"').strip("'")
+        if normalized_value:
+            data[normalized_key] = normalized_value
+            current_block = None
+        else:
+            data[normalized_key] = {}
+            current_block = normalized_key
     return data, body
 
 
@@ -76,10 +99,20 @@ def validate_skill(root: Path, reporter: Reporter) -> None:
         return
 
     frontmatter, body = parsed
-    if set(frontmatter) != {"name", "description"}:
-        reporter.fail(f"SKILL.md frontmatter should only contain name and description, found: {sorted(frontmatter)}")
+    allowed_keys = {"name", "description", "metadata"}
+    required_keys = {"name", "description"}
+    if not required_keys.issubset(frontmatter):
+        reporter.fail(f"SKILL.md frontmatter is missing required keys: {sorted(required_keys - set(frontmatter))}")
+    elif set(frontmatter) - allowed_keys:
+        reporter.fail(f"SKILL.md frontmatter contains unsupported keys: {sorted(set(frontmatter) - allowed_keys)}")
     else:
-        reporter.ok("SKILL.md frontmatter only contains name and description")
+        reporter.ok("SKILL.md frontmatter contains supported keys")
+
+    metadata = frontmatter.get("metadata")
+    if metadata is not None and not isinstance(metadata, dict):
+        reporter.fail("SKILL.md metadata must be a mapping when present")
+    elif isinstance(metadata, dict):
+        reporter.ok("SKILL.md metadata is a mapping")
 
     if frontmatter.get("name") != root.name:
         reporter.fail("Skill name does not match directory name")
