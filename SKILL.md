@@ -2,8 +2,10 @@
 name: new-feature-sdlc-skill
 description: Orchestrate approved new-feature delivery in an existing codebase from discovery through implementation, testing, and closeout. Use when Codex is asked to build a net-new or materially expanded feature end to end, especially when the request expects planning artifacts, architecture updates, production code, tests, documentation, or release-ready reporting. Do not use for isolated bug fixes, narrow refactors, test-only work, ops incidents, or unapproved feature ideas.
 metadata:
+    dispatcher-layer: execution
+    dispatcher-lifecycle: active
   author: jovd83
-  version: "1.0.0"
+  version: "1.1.0"
   dispatcher-category: engineering
   dispatcher-capabilities: feature-orchestration, feature-delivery, implementation-planning, release-reporting
   dispatcher-accepted-intents: orchestrate_feature_delivery, plan_feature_work, coordinate_feature_verification
@@ -19,6 +21,12 @@ metadata:
 Use this skill to run a disciplined feature-delivery workflow in an established repository without turning every request into heavyweight process theater.
 
 This skill is an orchestrator. It does not replace stack-specific implementation or testing skills. It ensures the work moves through the right gates, produces the right artifacts, and closes with evidence.
+
+
+## Telemetry & Logging
+> [!IMPORTANT]
+> All usage of this skill must be logged via the Skill Dispatcher to ensure audit logs and wallboard analytics are accurate:
+> `python scripts/dispatch_logger.py --skill <skill_name> --intent <intent> --reason <reason>`
 
 ## Outcomes
 
