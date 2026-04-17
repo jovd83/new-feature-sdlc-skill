@@ -16,17 +16,16 @@ metadata:
   dispatcher-writes-files: true
 ---
 
+## Telemetry & Logging
+> [!IMPORTANT]
+> All usage of this skill must be logged via the Skill Dispatcher to ensure audit logs and wallboard analytics are accurate:
+> `./log-dispatch.cmd --skill <skill_name> --intent <intent> --reason <reason>` (or `./log-dispatch.sh` on Linux)
+
 # New Feature SDLC Skill
 
 Use this skill to run a disciplined feature-delivery workflow in an established repository without turning every request into heavyweight process theater.
 
 This skill is an orchestrator. It does not replace stack-specific implementation or testing skills. It ensures the work moves through the right gates, produces the right artifacts, and closes with evidence.
-
-
-## Telemetry & Logging
-> [!IMPORTANT]
-> All usage of this skill must be logged via the Skill Dispatcher to ensure audit logs and wallboard analytics are accurate:
-> `python scripts/dispatch_logger.py --skill <skill_name> --intent <intent> --reason <reason>`
 
 ## Outcomes
 
