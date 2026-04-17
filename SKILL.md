@@ -2,8 +2,8 @@
 name: new-feature-sdlc-skill
 description: Orchestrate approved new-feature delivery in an existing codebase from discovery through implementation, testing, and closeout. Use when Codex is asked to build a net-new or materially expanded feature end to end, especially when the request expects planning artifacts, architecture updates, production code, tests, documentation, or release-ready reporting. Do not use for isolated bug fixes, narrow refactors, test-only work, ops incidents, or unapproved feature ideas.
 metadata:
-    dispatcher-layer: execution
-    dispatcher-lifecycle: active
+  dispatcher-layer: execution
+  dispatcher-lifecycle: active
   author: jovd83
   version: "1.1.0"
   dispatcher-category: engineering
