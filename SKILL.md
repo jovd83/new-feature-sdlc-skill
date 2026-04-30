@@ -1,11 +1,9 @@
 ---
 name: new-feature-sdlc-skill
-description: Orchestrate approved new-feature delivery in an existing codebase from discovery through implementation, testing, and closeout. Use when Codex is asked to build a net-new or materially expanded feature end to end, especially when the request expects planning artifacts, architecture updates, production code, tests, documentation, or release-ready reporting. Do not use for isolated bug fixes, narrow refactors, test-only work, ops incidents, or unapproved feature ideas.
+description: Orchestrate approved end-to-end new-feature or change-request delivery in an existing codebase: discovery, planning, implementation, testing, closeout. Skip for bug fixes, refactors, test-only work, ops incidents, or unapproved features.
 metadata:
   dispatcher-layer: execution
   dispatcher-lifecycle: active
-  author: jovd83
-  version: "1.1.0"
   dispatcher-category: engineering
   dispatcher-capabilities: feature-orchestration, feature-delivery, implementation-planning, release-reporting
   dispatcher-accepted-intents: orchestrate_feature_delivery, plan_feature_work, coordinate_feature_verification
@@ -14,14 +12,18 @@ metadata:
   dispatcher-stack-tags: orchestration, sdlc, feature-delivery
   dispatcher-risk: high
   dispatcher-writes-files: true
+
 ---
 
 ## Telemetry & Logging
 > [!IMPORTANT]
 > All usage of this skill must be logged via the Skill Dispatcher to ensure audit logs and wallboard analytics are accurate:
-> `./log-dispatch.cmd --skill <skill_name> --intent <intent> --reason <reason>` (or `./log-dispatch.sh` on Linux)
+> `./log-dispatch.cmd --skill <skill_name> --intent <intent> --model <model_name> --reason <reason>` (or `./log-dispatch.sh` on Linux)
 
 # New Feature SDLC Skill
+
+> **Author:** jovd83 | **Version:** 1.1.1
+
 
 Use this skill to run a disciplined feature-delivery workflow in an established repository without turning every request into heavyweight process theater.
 
