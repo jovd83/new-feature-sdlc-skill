@@ -2,7 +2,7 @@
 
 [![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-![Version](https://img.shields.io/badge/version-1.0.1-blue)
+![Version](https://img.shields.io/badge/version-1.1.1-blue)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Validate Skills](https://img.shields.io/badge/Validate-Skills-success)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/jovd83)
@@ -76,6 +76,24 @@ new-feature-sdlc-skill/
 4. Implement the feature with minimal unrelated churn.
 5. Verify with the strongest practical evidence.
 6. Close with a structured implementation report.
+
+## Orchestrator Chain Integration
+
+When invoked through `skill-orchestrator`, this skill runs as a 9-phase chain defined in `config/chain_definition.json`:
+
+| Phase | Sub-skill | Maps to |
+|:------|:----------|:--------|
+| 1 | `codebase-context` | Step 2 — Inspect repo and conventions |
+| 2 | `backlog-story-generator` | Step 3 — Create epics and user stories |
+| 3 | `acceptance-criteria-designer` | Step 3 — Draft testable acceptance criteria |
+| 4 | [agent-handled] | Step 4 — Implement the feature |
+| 5 | `stack-aware-unit-testing-skill` | Step 5 — Unit tests |
+| 6 | `api-contract-sentinel` | Step 5 — Service and API contract tests |
+| 7 | `playwright-skill` | Step 5 — Frontend and E2E tests |
+| 8 | `automated-test-reviewer` | Step 5 — Review coverage across all layers |
+| 9 | `release-manager-skill` | Step 6 — Closeout report (stops before GitHub push) |
+
+Phase 9 carries a hard constraint: the release skill prepares all artifacts but does **not** push to GitHub. The human decides when to publish.
 
 ## Installation
 

@@ -1,0 +1,90 @@
+{
+  "_comment": "Chain definition for new-feature-sdlc-skill. Maps directly to its 5-step core workflow.",
+  "chain_name": "new-feature-sdlc-skill",
+  "description": "Full feature SDLC chain: inspect repo \u2192 backlog \u2192 AC \u2192 implement \u2192 unit/API/E2E tests \u2192 review \u2192 release",
+  "phases": [
+    {
+      "id": "repo_inspection",
+      "name": "Step 2 \u2014 Inspect repository and conventions",
+      "skill": "codebase-context",
+      "intent": "discover_repo_conventions",
+      "reason": "Inspect tech stack, existing test frameworks, naming conventions, and CI setup before any planning or code",
+      "risk": "low",
+      "pass_context_forward": true
+    },
+    {
+      "id": "backlog",
+      "name": "Step 3a \u2014 Create or update epics and user stories",
+      "skill": "backlog-story-generator",
+      "intent": "generate_feature_stories",
+      "reason": "Translate the approved feature request into structured epics and user stories for the backlog",
+      "risk": "low",
+      "pass_context_forward": true
+    },
+    {
+      "id": "acceptance_criteria",
+      "name": "Step 3b \u2014 Draft testable acceptance criteria",
+      "skill": "acceptance-criteria-designer",
+      "intent": "draft_acceptance_criteria",
+      "reason": "Convert user stories into testable AC, in Gherkin or TDD format, to guide implementation and test design",
+      "risk": "low",
+      "pass_context_forward": true
+    },
+    {
+      "id": "implementation",
+      "name": "Step 4 \u2014 Implement the feature",
+      "skill": null,
+      "intent": "implement_feature",
+      "reason": "Agent implements the minimal production-ready change set using repo conventions from Step 2 and AC from Step 3",
+      "risk": "high",
+      "pass_context_forward": false,
+      "_note": "Agent-handled: the executing model writes the code. Sub-skill dispatched at runtime if stack-specific skill is needed."
+    },
+    {
+      "id": "unit_tests",
+      "name": "Step 4 \u2014 Unit tests (stack-aware)",
+      "skill": "stack-aware-unit-testing-skill",
+      "intent": "generate_unit_tests",
+      "reason": "Generate and run unit tests for the implemented feature using the repository's native test stack",
+      "risk": "medium",
+      "pass_context_forward": true
+    },
+    {
+      "id": "api_tests",
+      "name": "Step 4 \u2014 Service and API contract tests",
+      "skill": "api-contract-sentinel",
+      "intent": "validate_api_contracts",
+      "reason": "Validate API contract compliance and service behavior if the feature touches API endpoints",
+      "risk": "medium",
+      "pass_context_forward": false
+    },
+    {
+      "id": "e2e_tests",
+      "name": "Step 4 \u2014 Frontend and E2E tests",
+      "skill": "playwright-skill",
+      "intent": "implement_e2e_tests",
+      "reason": "Write and run E2E tests for the UI flow introduced or changed by the feature",
+      "risk": "medium",
+      "pass_context_forward": false
+    },
+    {
+      "id": "test_review",
+      "name": "Step 5 \u2014 Verify: review test coverage and quality",
+      "skill": "automated-test-reviewer",
+      "intent": "review_automation_quality",
+      "reason": "Review overall test coverage, automation quality, and evidence completeness across all test layers",
+      "risk": "low",
+      "pass_context_forward": false
+    },
+    {
+      "id": "release_closeout",
+      "name": "Step 6 \u2014 Close with structured implementation report",
+      "skill": "release-manager-skill",
+      "intent": "prepare_release",
+      "reason": "Prepare changelog, version bump, and structured implementation report summarising what was done, verified, and left open",
+      "risk": "medium",
+      "pass_context_forward": false,
+      "query_suffix": "STOP BEFORE PUSHING TO GITHUB. Prepare all release artifacts \u2014 changelog entry, version bump, release notes, and implementation report \u2014 but do NOT run 'git push', 'gh release create', or any command that publishes to the remote. End your output with a clear summary of what is ready and what the human must do to publish."
+    }
+  ]
+}
