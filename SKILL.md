@@ -1,6 +1,6 @@
 ---
 name: new-feature-sdlc-skill
-description: Orchestrate approved end-to-end new-feature or change-request delivery in an existing codebase: discovery, planning, implementation, testing, closeout. Skip for bug fixes, refactors, test-only work, ops incidents, or unapproved features.
+description: "Orchestrate approved end-to-end new-feature or change-request delivery in an existing codebase: discovery, planning, implementation, testing, closeout. Skip for bug fixes, refactors, test-only work, ops incidents, or unapproved features."
 metadata:
   dispatcher-layer: execution
   dispatcher-lifecycle: active
