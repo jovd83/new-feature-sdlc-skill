@@ -42,6 +42,7 @@ Initial enterprise-grade upgrade release for `new-feature-sdlc-skill`.
 - `disable-model-invocation: true`: the chain runs as a Claude Code agent (`new-feature-sdlc`) instead of being picked from its description.
 - New "Chain Phases" section, generated from `config/chain_definition.json`: engine phase, skill, gate, and the matching step of this SKILL.md's workflow.
 - `config/chain_definition.json` is now committed (with the approval gate after phase 3 and the implementation instructions); the Chain Phases table and the Claude Code agent read it.
+- `VERSION` realigned: it still said 1.0.1.
 
 ## [1.1.1] - 2026-04-30
 
