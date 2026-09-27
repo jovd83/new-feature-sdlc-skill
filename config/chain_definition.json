@@ -28,7 +28,9 @@
       "intent": "draft_acceptance_criteria",
       "reason": "Convert user stories into testable AC, in Gherkin or TDD format, to guide implementation and test design",
       "risk": "low",
-      "pass_context_forward": true
+      "pass_context_forward": true,
+      "on_phase_complete": "hitl",
+      "_hitl_note": "Gate before implementation. Host must --approve to start phase 4; --reject halts the chain with planning artefacts intact."
     },
     {
       "id": "implementation",
@@ -38,7 +40,8 @@
       "reason": "Agent implements the minimal production-ready change set using repo conventions from Step 2 and AC from Step 3",
       "risk": "high",
       "pass_context_forward": false,
-      "_note": "Agent-handled: the executing model writes the code. Sub-skill dispatched at runtime if stack-specific skill is needed."
+      "query_suffix": "Implement the minimal production-ready change set that satisfies every acceptance criterion from Step 3 (in your accumulated context). Use the repository conventions discovered in Step 2 (language, framework, file layout, naming, test stack). Use your native file-edit tools (Edit / Write / Bash) to actually change files \u2014 do NOT just describe what would change.\n\nSCOPE DISCIPLINE: implement exactly what the AC requires, nothing more. Do not refactor unrelated code. Do not add features the AC does not require. Do not add logging, telemetry, error-handler middleware, or configuration plumbing unless the AC explicitly calls for it.\n\nOUTPUT: write a concise summary of what you changed (file paths, deltas per file, rationale tied back to specific AC scenarios) as the phase artefact. The actual code lives in the modified files; the phase artefact is the change log.",
+      "_note": "Agent-handled: the executing model writes the code."
     },
     {
       "id": "unit_tests",
