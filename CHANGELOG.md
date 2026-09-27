@@ -36,6 +36,12 @@ Initial enterprise-grade upgrade release for `new-feature-sdlc-skill`.
 - `Invoke-Pester .\tests`
 - `python .\scripts\eval_report.py .`
 
+## [1.2.0] - 2026-09-27
+
+### Changed
+- `disable-model-invocation: true`: the chain runs as a Claude Code agent (`new-feature-sdlc`) instead of being picked from its description.
+- New "Chain Phases" section, generated from `config/chain_definition.json`: engine phase, skill, gate, and the matching step of this SKILL.md's workflow.
+
 ## [1.1.1] - 2026-04-30
 
 ### Changed

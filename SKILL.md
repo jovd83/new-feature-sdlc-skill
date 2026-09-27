@@ -1,6 +1,7 @@
 ---
 name: new-feature-sdlc-skill
 description: "Orchestrate approved end-to-end new-feature or change-request delivery in an existing codebase: discovery, planning, implementation, testing, closeout. Skip for bug fixes, refactors, test-only work, ops incidents, or unapproved features."
+disable-model-invocation: true
 metadata:
   dispatcher-layer: execution
   dispatcher-lifecycle: active
@@ -17,7 +18,7 @@ metadata:
 
 # New Feature SDLC Skill
 
-> **Author:** jovd83 | **Version:** 1.1.1
+> **Author:** jovd83 | **Version:** 1.2.0
 
 
 Use this skill to run a disciplined feature-delivery workflow in an established repository without turning every request into heavyweight process theater.
@@ -132,6 +133,22 @@ Use [references/report_template.md](./references/report_template.md) as the star
 - Do not report validation you did not actually run.
 - Do not claim coverage numbers you did not measure.
 - Do not convert runtime notes into persistent project memory unless the repo clearly wants that artifact.
+
+## Chain Phases
+
+`config/chain_definition.json` is the executable contract: 9 phases, run by `skill-orchestrator/scripts/next_phase.py`. In Claude Code, run the whole chain with the **`new-feature-sdlc`** agent (`~/.claude/agents/new-feature-sdlc.md`). It stops at each approval gate and returns, and the main conversation resumes it. This SKILL.md stays the reference for the phases and for manual runs in other harnesses.
+
+| # | Phase | Skill | Gate | Workflow step above |
+|---|---|---|---|---|
+| 1 | `repo_inspection` | `codebase-context` |  | Phase 0: Entry Gate |
+| 2 | `backlog` | `backlog-story-generator` |  | Phase 1: Scope and Plan |
+| 3 | `acceptance_criteria` | `acceptance-criteria-designer` | **approval gate after** | Phase 1-2; approval before implementation |
+| 4 | `implementation` | agent-handled |  | Phase 3: Implementation |
+| 5 | `unit_tests` | `stack-aware-unit-testing-skill` |  | Phase 4: Verification |
+| 6 | `api_tests` | `api-contract-sentinel` |  | Phase 4: Verification |
+| 7 | `e2e_tests` | `playwright-skill` |  | Phase 4: Verification |
+| 8 | `test_review` | `automated-test-reviewer` |  | Phase 4: Verification |
+| 9 | `release_closeout` | `release-manager-skill` |  | Phase 5: Closeout |
 
 ## Memory Model
 
