@@ -45,14 +45,7 @@ If the request is mixed, apply this skill only to the feature-delivery portion.
 
 Work in phases. Do not skip forward blindly, but do scale the depth to the repository and the request.
 
-## Dispatcher Integration
-
-Use `skill-dispatcher` as the primary integration layer whenever this skill needs specialized help for planning, implementation, testing, documentation, or reporting.
-
-- Prefer dispatching by intent instead of naming sibling skills directly.
-- Use repository evidence first, then let the dispatcher pick the best specialized skill for the current stack or artifact.
-- Keep direct skill names as examples or compatibility fallbacks, not as the primary routing contract.
-- Keep shared memory limited to stable cross-project policy supplied externally, never task-local delivery state.
+Use repository evidence first when picking a specialized skill for the current stack or artifact; the skill names below are examples.
 
 ### Phase 0: Entry Gate
 
