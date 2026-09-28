@@ -156,7 +156,7 @@ Use memory deliberately and keep boundaries clean.
 
 - Runtime memory: task-local findings, temporary assumptions, active diffs, and short-lived validation notes for the current run.
 - Project or skill memory: persistent local artifacts such as feature docs, ADRs, test plans, release notes, and implementation reports stored in the repository when they provide ongoing value.
-- Shared memory: cross-repository or cross-agent conventions belong outside this skill. If stable organizational knowledge needs promotion, integrate with a dedicated shared-memory skill instead of embedding it here.
+- Shared memory: cross-repository or cross-agent conventions belong outside this skill. If stable organizational knowledge needs promotion, record it in the agent's own memory (for example CLAUDE.md or AGENTS.md) instead of embedding it here.
 
 Promotion rules:
 
